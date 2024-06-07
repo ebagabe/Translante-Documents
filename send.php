@@ -1,10 +1,12 @@
 <?php
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $name = $_POST['nOme'];
+    $name = $_POST['nome'];
     $sobrenome = $_POST['sobrenome'];
     $email = $_POST['email'];
-    $document_files = $_FILES['document'];
+    $document_files = $_FILES['documents'];
+    $from_language = $_POST['from_language'];
+    $to_language = $_POST['to_language'];
 
     $document_filename = 'document.pdf';
 
@@ -23,6 +25,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $body .= "<p><strong>Nome:</strong> $name</p>";
     $body .= "<p><strong>Sobrenome:</strong> $sobrenome</p>";
     $body .= "<p><strong>Email:</strong> $email</p>";
+    $body .= "<p><strong>De:</strong> $from_language</p>";
+    $body .= "<p><strong>Para:</strong> $to_language</p>";
     $body .= "</body></html>\r\n";
 
     if (!empty($document_files['name'][0])) {
