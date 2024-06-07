@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tradução</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="./script.js" defer></script>
+</head>
+
+<body>
+    <div>
+        <h1 class="title">FORMULÁRIO</h1>
+    </div>
+    <form action="send.php" method="POST" enctype="multipart/form-data" id="translationForm">
+        <div class="form-container">
+            <div class="left-side">
+                <div class="input-box">
+                    <label for="nome">NOME</label>
+                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+                </div>
+
+                <div class="input-box">
+                    <label for="sobrenome">SOBRENOME</label>
+                    <input type="text" id="sobrenome" placeholder="Digite seu sobrenome" name="sobrenome" required>
+                </div>
+
+                <div class="input-box">
+                    <label for="email">E-MAIL</label>
+                    <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+                </div>
+            </div>
+
+            <div class="right-side">
+                <div class="translation-box">
+                    <label for="from_language">TRADUÇÃO DE:</label>
+                    <select id="from_language" name="from_language" required>
+                        <option value="pt">Português</option>
+                        <option value="en">Inglês</option>
+                        <option value="es">Espanhol</option>
+                        <option value="fr">Francês</option>
+                        <option value="de">Alemão</option>
+                    </select>
+                </div>
+
+                <div class="translation-box">
+                    <label for="to_language">PARA:</label>
+                    <select id="to_language" name="to_language" required>
+                        <option value="en">Inglês</option>
+                        <option value="pt">Português</option>
+                        <option value="es">Espanhol</option>
+                        <option value="fr">Francês</option>
+                        <option value="de">Alemão</option>
+                    </select>
+                </div>
+
+                <div class="input-box" id="input-docs">
+                    <label for="document">ANEXAR DOCUMENTOS</label>
+                    <button type="button" id="addFile">Adicionar</button>
+                    <input type="file" id="document" name="documents[]" multiple>
+                </div>
+            </div>
+        </div>
+        <div class="botao-enviar">
+            <input type="submit" value="ENVIAR">
+        </div>
+    </form>
+
+    <script>
+        document.getElementById('addFile').addEventListener('click', function () {
+            var inputDocs = document.querySelector('#input-docs');
+            var newInput = document.createElement('input');
+            newInput.type = 'file';
+            newInput.name = 'documents[]';
+            inputDocs.appendChild(newInput);
+        });
+    </script>
+</body>
+
+</html>
