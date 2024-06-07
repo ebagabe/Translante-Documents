@@ -4,6 +4,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $name = $_POST['nome'];
     $sobrenome = $_POST['sobrenome'];
     $email = $_POST['email'];
+    $telefone = $_POST['telefone'];
     $document_files = $_FILES['documents'];
     $from_language = $_POST['from_language'];
     $to_language = $_POST['to_language'];
@@ -25,6 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $body .= "<p><strong>Nome:</strong> $name</p>";
     $body .= "<p><strong>Sobrenome:</strong> $sobrenome</p>";
     $body .= "<p><strong>Email:</strong> $email</p>";
+    $body .= "<p><strong>Telefone:</strong> $telefone</p>";
     $body .= "<p><strong>De:</strong> $from_language</p>";
     $body .= "<p><strong>Para:</strong> $to_language</p>";
     $body .= "</body></html>\r\n";

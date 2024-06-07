@@ -68,7 +68,8 @@ form {
 
 .input-box input::placeholder {
     color: #C6C6C6;
-    font-size: 17px;
+    font-size: 16px;
+    font-family: var(--fonte-primaria);
 }
 
 .translation-box {
