@@ -37,7 +37,6 @@ form {
 .form-container {
     display: flex;
     justify-content: space-evenly;
-    height: 570px;
     align-items: center;
 }
 
@@ -74,6 +73,10 @@ form {
 
 .translation-box {
     margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    max-width: 350px;
 }
 
 .translation-box label {
@@ -82,7 +85,7 @@ form {
 
 .translation-box select {
     border-radius: 4px;
-    height: 30px;
+    height: 50px;
     padding: 5px;
     border: none;
 }
@@ -116,6 +119,7 @@ form {
     border-radius: 6px;
     font-weight: 600;
     font-size: 14px;
+    margin-bottom: 20px;
 }
 
 #document {
@@ -135,10 +139,21 @@ form {
     background-color: #033391;
 }
 
+.file-inputs-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
 @media screen and (min-width: 768px) and (max-width: 1023px) {
-  .input-box input {
-    width: 320px;
-  }
+    .input-box input {
+        width: 320px;
+        max-width: 320px;
+    }
+
+    .translation-box {
+        width: 320px;
+        max-width: 320px;
+    }
 }
 
 @media screen and (max-width: 767px) {
@@ -148,20 +163,18 @@ form {
         margin: 50px 0px 50px 0px;
     }
 
-    form {
-        height: 700px;
-    }
-
     .form-container {
         flex-direction: column;
     }
 
     .input-box input {
         width: 300px;
+        max-width: 300px;
     }
 
-    .botao-enviar {
-        margin-top: 80px;
+    .translation-box {
+        width: 300px;
+        max-width: 300px;
     }
 
-  }
+}
